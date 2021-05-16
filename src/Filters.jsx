@@ -7,18 +7,12 @@ import { year2006, year2007, year2008, year2009, year2010, year2011, year2012, y
 
 function Filters()
 {
-    // const [yearValue, setyearValue] = useState();
-    // // const [yearData, setyearData] = useState([]);
-    // const [launchValue, setlaunchValue] = useState();
-    // const [landValue, setlandValue] = useState();
-
     const yearValue = useSelector((state)=>state.changeYear);
     const launchValue = useSelector((state)=>state.changeLaunch);
     const landValue = useSelector((state)=>state.changeLand);
 
     const dispatch = useDispatch();
 
-    
     function changeColor(event)
      {
        const id1 = event.target.id;
@@ -72,12 +66,6 @@ function Filters()
         document.getElementById(id1).style.backgroundColor = "rgb(172, 228, 175)"
        }
      }
-
-    // function myFunc(year)
-    // {
-    //     setyearValue(year);
-    // }
-    
 
     return(<>
     <div className="filter-bar">

@@ -9,14 +9,12 @@ import { useSelector, useDispatch } from 'react-redux';
 function FilterData2()
 {
     const [data, setdata] = useState([]);
-    // const [ yearValue, setYearValue] = useState();
     const { year,launch, land } = useParams()    
 
     const yearValue = useSelector((state)=>state.changeYear);
     const launchValue = useSelector((state)=>state.changeLaunch);
     const landValue = useSelector((state)=>state.changeLand);
-    // const dispatch = useDispatch();
-    // const [ url, setUrl ] = useState(`https://api.spacexdata.com/v3/launches?limit=100&launch_year=${yearValue}`);
+    
     
         useEffect(()=>{ 
         async function getLaunchData(){
@@ -61,10 +59,7 @@ function FilterData2()
                 {
                     const data = await axios.get(`https://api.spacexdata.com/v3/launches?limit=100&land_success=${landValue}`);
                     setdata([data]);
-                }
-                
-    
-                
+                }        
         }
         getLaunchData();
     })

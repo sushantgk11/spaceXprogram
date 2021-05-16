@@ -14,16 +14,11 @@ function App() {
   return (<>
   <div className="header" ><h2><img src={spacexlogo} width="200px" height="30px"></img>Launch Programs</h2></div>
   <Filters />
-  {/* <SpaceX /> */}
-  
   
   <Switch>
   <Route path='/spaceX/:year/:launch/:land' component={FilterData2} ></Route>
   <Route path='/' component={SpaceX} ></Route>
-  
-  
   </Switch>
-    
     </>
   );
 }
