@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Filters from './Filters';
+import { Switch, Route } from 'react-router-dom';
+import SpaceX from './SpaceXprograms';
+import MainPage from './main';
+import FilterData from './FilterData';
+import FilterData2 from './FilterData2';
+import spacexlogo from "./images/spacex-logo.png"
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (<>
+  <div className="header" ><h2><img src={spacexlogo} width="200px" height="30px"></img>Launch Programs</h2></div>
+  <Filters />
+  {/* <SpaceX /> */}
+  
+  
+  <Switch>
+  <Route path='/spaceX/:year/:launch/:land' component={FilterData2} ></Route>
+  <Route path='/' component={SpaceX} ></Route>
+  
+  
+  </Switch>
+    
+    </>
   );
 }
 

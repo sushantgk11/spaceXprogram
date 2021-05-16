@@ -1,0 +1,25 @@
+.main
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 20px;
+    overflow: hidden;
+    padding: 0 20px 0 20px;
+    background-color: rgb(226, 226, 228);
+}
+@media (max-width:700px)
+{
+    .main
+    {
+        grid-template-columns: 100%;
+        grid-gap: 0px;
+    }
+}
+@media (min-width:701px) and (max-width:1024px)
+{
+    .main 
+    {
+        grid-template-columns:30% 70%;
+    }
+}
